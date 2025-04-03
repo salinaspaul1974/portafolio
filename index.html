@@ -1,1274 +1,1514 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portafolio de Desarrollo Web</title>
     <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <style>
-        :root {
-            --primary: #211C84;
-            --secondary: #4D55CC;
-            --tertiary: #7A73D1;
-            --accent: #FFAB5B;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow-x: hidden;
-        }
-        
-        .bg-primary-custom {
-            background-color: var(--primary);
-        }
-        
-        .bg-secondary-custom {
-            background-color: var(--secondary);
-        }
-        
-        .bg-tertiary-custom {
-            background-color: var(--tertiary);
-        }
-        
-        .text-accent {
-            color: var(--accent);
-        }
-        
-        .btn-accent {
-            background-color: var(--accent);
-            color: #fff;
-            border: none;
-        }
-        
-        .btn-accent:hover {
-            background-color: #e6994e;
-            color: #fff;
-        }
-        
-        /* Hero Section - Estilo Glassmorphism con Waves */
-        .hero-section {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, #211C84 0%, #4D55CC 100%);
-            color: white;
-            overflow: hidden;
-            padding: 0;
-        }
+      :root {
+        --primary: #211c84;
+        --secondary: #4d55cc;
+        --tertiary: #7a73d1;
+        --accent: #ffab5b;
+      }
 
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1;
-        }
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        overflow-x: hidden;
+      }
 
-        .hero-container {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 120px 40px 180px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
+      .bg-primary-custom {
+        background-color: var(--primary);
+      }
 
-        .hero-content {
-            position: relative;
-            z-index: 3;
-        }
+      .bg-secondary-custom {
+        background-color: var(--secondary);
+      }
 
-        .hero-badge {
-            margin-bottom: 30px;
-        }
+      .bg-tertiary-custom {
+        background-color: var(--tertiary);
+      }
 
-        .hero-badge span {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            letter-spacing: 1px;
-        }
+      .text-accent {
+        color: var(--accent);
+      }
 
+      .btn-accent {
+        background-color: var(--accent);
+        color: #fff;
+        border: none;
+      }
+
+      .btn-accent:hover {
+        background-color: #e6994e;
+        color: #fff;
+      }
+
+      /* Hero Section - Estilo Glassmorphism con Waves */
+      .hero-section {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(135deg, #211c84 0%, #4d55cc 100%);
+        color: white;
+        overflow: hidden;
+        padding: 0;
+      }
+
+      #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+
+      .hero-container {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 120px 40px 180px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 3;
+      }
+
+      .hero-badge {
+        margin-bottom: 30px;
+      }
+
+      .hero-badge span {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 25px;
+      }
+
+      .title-line {
+        display: block;
+      }
+
+      .text-stroke {
+        color: transparent;
+        -webkit-text-stroke: 1px white;
+        text-stroke: 1px white;
+      }
+
+      .text-gradient {
+        background: linear-gradient(90deg, #ffab5b 0%, #ff7b5b 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: inline;
+      }
+
+      .hero-description {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 40px;
+        max-width: 90%;
+        opacity: 0.9;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 20px;
+      }
+
+      /* Botones magnéticos */
+      .btn-magnetic {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        text-decoration: none;
+        overflow: hidden;
+        border-radius: 50px;
+        width: 180px;
+        height: 55px;
+      }
+
+      .btn-content {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        height: 100%;
+        font-size: 1rem;
+        font-weight: 600;
+        color: white;
+      }
+
+      .btn-background {
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 50px;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+
+      .btn-magnetic:hover .btn-background {
+        background: rgba(255, 171, 91, 0.8);
+        transform: scale(1.05);
+      }
+
+      .btn-magnetic.secondary:hover .btn-background {
+        background: rgba(77, 85, 204, 0.8);
+      }
+
+      .btn-magnetic i {
+        font-size: 1.1rem;
+      }
+
+      /* Esfera de tecnologías */
+      .tech-sphere {
+        position: relative;
+        width: 100%;
+        height: 500px;
+        perspective: 1000px;
+      }
+
+      .sphere-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        animation: rotateSphere 20s infinite linear;
+        top: 20px;
+      }
+
+      .sphere {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+      }
+
+      .ring {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        transform-style: preserve-3d;
+      }
+
+      .ring-1 {
+        transform: rotateY(70deg);
+      }
+
+      .ring-1 .tech-item {
+        margin-top: 220px;
+        margin-left: 350px;
+      }
+
+      .ring-2 {
+        transform: rotateY(70deg) rotateX(40deg);
+      }
+      .ring-2 .tech-item {
+        margin-top: 120px;
+        margin-left: 250px;
+      }
+
+      .ring-3 {
+        transform: rotateY(70deg) rotateX(-40deg);
+      }
+
+      .ring-3 .tech-item {
+        margin-top: 120px;
+        margin-left: 260px;
+      }
+
+      .tech-item {
+        position: absolute;
+        color: white;
+        font-size: 1rem;
+        font-weight: 600;
+        transform: rotateY(calc(var(--i) * 90deg)) translateZ(180px);
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        padding: 8px 15px;
+        border-radius: 30px;
+        white-space: nowrap;
+      }
+
+      @keyframes rotateSphere {
+        0% {
+          transform: rotateY(0);
+        }
+        100% {
+          transform: rotateY(360deg);
+        }
+      }
+
+      /* Waves animadas */
+      .hero-waves {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 150px;
+        overflow: hidden;
+      }
+
+      .waves {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin-bottom: -7px;
+      }
+
+      .parallax > use {
+        animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+      }
+
+      .parallax > use:nth-child(1) {
+        animation-delay: -2s;
+        animation-duration: 7s;
+      }
+
+      .parallax > use:nth-child(2) {
+        animation-delay: -3s;
+        animation-duration: 10s;
+      }
+
+      .parallax > use:nth-child(3) {
+        animation-delay: -4s;
+        animation-duration: 13s;
+      }
+
+      .parallax > use:nth-child(4) {
+        animation-delay: -5s;
+        animation-duration: 20s;
+      }
+
+      @keyframes move-forever {
+        0% {
+          transform: translate3d(-90px, 0, 0);
+        }
+        100% {
+          transform: translate3d(85px, 0, 0);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 1200px) {
         .hero-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 25px;
+          font-size: 3rem;
         }
 
-        .title-line {
-            display: block;
-        }
-
-        .text-stroke {
-            color: transparent;
-            -webkit-text-stroke: 1px white;
-            text-stroke: 1px white;
-        }
-
-        .text-gradient {
-            background: linear-gradient(90deg, #FFAB5B 0%, #FF7B5B 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: inline;
-        }
-
-        .hero-description {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 40px;
-            max-width: 90%;
-            opacity: 0.9;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 20px;
-        }
-
-        /* Botones magnéticos */
-        .btn-magnetic {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0;
-            border: none;
-            background: transparent;
-            cursor: pointer;
-            text-decoration: none;
-            overflow: hidden;
-            border-radius: 50px;
-            width: 180px;
-            height: 55px;
-        }
-
-        .btn-content {
-            position: relative;
-            z-index: 3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            height: 100%;
-            font-size: 1rem;
-            font-weight: 600;
-            color: white;
-        }
-
-        .btn-background {
-            position: absolute;
-            z-index: 2;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            border-radius: 50px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-
-        .btn-magnetic:hover .btn-background {
-            background: rgba(255, 171, 91, 0.8);
-            transform: scale(1.05);
-        }
-
-        .btn-magnetic.secondary:hover .btn-background {
-            background: rgba(77, 85, 204, 0.8);
-        }
-
-        .btn-magnetic i {
-            font-size: 1.1rem;
-        }
-
-        /* Esfera de tecnologías */
         .tech-sphere {
-            position: relative;
-            width: 100%;
-            height: 500px;
-            perspective: 1000px;
-        }
-
-        .sphere-container {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
-            animation: rotateSphere 20s infinite linear;
-            top: 20px;
-        }
-
-        .sphere {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
-        }
-
-        .ring {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            transform-style: preserve-3d;
-        }
-
-        .ring-1 {
-            transform: rotateY(70deg);
-        }
-
-        .ring-1 .tech-item{
-            margin-top: 220px;
-            margin-left: 350px;
-        }
-
-        .ring-2 {
-            transform: rotateY(70deg) rotateX(40deg);
-        }
-        .ring-2 .tech-item{
-            margin-top: 120px;
-            margin-left: 250px;
-        }
-
-        .ring-3 {
-            transform: rotateY(70deg) rotateX(-40deg);
-        }
-
-        .ring-3 .tech-item{
-            margin-top: 120px;
-            margin-left: 260px;
+          height: 450px;
         }
 
         .tech-item {
-            position: absolute;
-            color: white;
-            font-size: 1rem;
-            font-weight: 600;
-            transform: rotateY(calc(var(--i) * 90deg)) translateZ(180px);
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            padding: 8px 15px;
-            border-radius: 30px;
-            white-space: nowrap;
+          font-size: 0.9rem;
+          padding: 6px 12px;
+          transform: rotateY(calc(var(--i) * 90deg)) translateZ(150px);
+        }
+      }
+
+      @media (max-width: 992px) {
+        .hero-container {
+          grid-template-columns: 1fr;
+          padding: 100px 30px 150px;
+          gap: 40px;
         }
 
-        @keyframes rotateSphere {
-            0% { transform: rotateY(0); }
-            100% { transform: rotateY(360deg); }
+        .hero-content {
+          text-align: center;
         }
 
-        /* Waves animadas */
-        .hero-waves {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 150px;
-            overflow: hidden;
+        .hero-description {
+          margin-left: auto;
+          margin-right: auto;
         }
 
-        .waves {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            margin-bottom: -7px;
+        .hero-actions {
+          justify-content: center;
         }
 
-        .parallax > use {
-            animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+        .tech-sphere {
+          height: 400px;
+          max-width: 500px;
+          margin: 0 auto;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
         }
 
-        .parallax > use:nth-child(1) {
-            animation-delay: -2s;
-            animation-duration: 7s;
+        .hero-description {
+          font-size: 1.1rem;
+          max-width: 100%;
         }
 
-        .parallax > use:nth-child(2) {
-            animation-delay: -3s;
-            animation-duration: 10s;
+        .hero-actions {
+          flex-direction: column;
+          align-items: center;
         }
 
-        .parallax > use:nth-child(3) {
-            animation-delay: -4s;
-            animation-duration: 13s;
+        .tech-sphere {
+          height: 350px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .hero-title {
+          font-size: 2rem;
         }
 
-        .parallax > use:nth-child(4) {
-            animation-delay: -5s;
-            animation-duration: 20s;
+        .hero-badge span {
+          font-size: 0.8rem;
         }
 
-        @keyframes move-forever {
-            0% { transform: translate3d(-90px, 0, 0); }
-            100% { transform: translate3d(85px, 0, 0); }
+        .tech-item {
+          font-size: 0.8rem;
+          transform: rotateY(calc(var(--i) * 90deg)) translateZ(120px);
         }
+      }
 
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .hero-title {
-                font-size: 3rem;
-            }
-            
-            .tech-sphere {
-                height: 450px;
-            }
-            
-            .tech-item {
-                font-size: 0.9rem;
-                padding: 6px 12px;
-                transform: rotateY(calc(var(--i) * 90deg)) translateZ(150px);
-            }
-        }
+      .tech-icon {
+        font-size: 3rem;
+        margin: 0 15px;
+        color: var(--primary);
+        transition: transform 0.3s;
+      }
 
-        @media (max-width: 992px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                padding: 100px 30px 150px;
-                gap: 40px;
-            }
-            
-            .hero-content {
-                text-align: center;
-            }
-            
-            .hero-description {
-                margin-left: auto;
-                margin-right: auto;
-            }
-            
-            .hero-actions {
-                justify-content: center;
-            }
-            
-            .tech-sphere {
-                height: 400px;
-                max-width: 500px;
-                margin: 0 auto;
-            }
-        }
+      .tech-icon:hover {
+        transform: scale(1.2);
+        color: var(--secondary);
+      }
 
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-description {
-                font-size: 1.1rem;
-                max-width: 100%;
-            }
-            
-            .hero-actions {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .tech-sphere {
-                height: 350px;
-            }
-        }
+      .project-card {
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+        margin-bottom: 20px;
+      }
 
-        @media (max-width: 576px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .hero-badge span {
-                font-size: 0.8rem;
-            }
-            
-            .tech-item {
-                font-size: 0.8rem;
-                transform: rotateY(calc(var(--i) * 90deg)) translateZ(120px);
-            }
-        }
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
 
+      .project-card img {
+        height: 200px;
+        object-fit: cover;
+      }
 
+      .project-card .card-body {
+        background-color: white;
+      }
 
+      .project-card .badge {
+        background-color: var(--accent);
+        color: white;
+      }
 
-        .tech-icon {
-            font-size: 3rem;
-            margin: 0 15px;
-            color: var(--primary);
-            transition: transform 0.3s;
-        }
-        
-        .tech-icon:hover {
-            transform: scale(1.2);
-            color: var(--secondary);
-        }
-        
-        .project-card {
-            border: none;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            margin-bottom: 20px;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .project-card img {
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .project-card .card-body {
-            background-color: white;
-        }
-        
-        .project-card .badge {
-            background-color: var(--accent);
-            color: white;
-        }
-        
-        .contact-section {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--tertiary) 100%);
-            color: white;
-            padding: 80px 0;
-        }
-        
-        footer {
-            background-color: var(--primary);
-            color: white;
-            padding: 30px 0;
-        }
-        
-        .nav-link {
-            color: white !important;
-            font-weight: 500;
-        }
-        
-        .nav-link:hover {
-            color: var(--accent) !important;
-        }
-        
-        .navbar-brand {
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-        
-        .skill-badge {
-            background-color: var(--tertiary);
-            color: white;
-            margin: 5px;
-            font-weight: normal;
-        }
-        
-        /* Estilos para los logos de tecnologías específicas */
-        .tech-icon-php {
-            color: #777BB4;
-        }
-        
-        .tech-icon-wordpress {
-            color: #21759B;
-        }
-        
-        .tech-icon-angular {
-            color: #DD0031;
-        }
-        
-        .tech-icon-jquery {
-            color: #0769AD;
-        }
-                /* Nueva sección Parallax */
+      .contact-section {
+        background: linear-gradient(
+          135deg,
+          var(--secondary) 0%,
+          var(--tertiary) 100%
+        );
+        color: white;
+        padding: 80px 0;
+      }
+
+      footer {
+        background-color: var(--primary);
+        color: white;
+        padding: 30px 0;
+      }
+
+      .nav-link {
+        color: white !important;
+        font-weight: 500;
+      }
+
+      .nav-link:hover {
+        color: var(--accent) !important;
+      }
+
+      .navbar-brand {
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+
+      .skill-badge {
+        background-color: var(--tertiary);
+        color: white;
+        margin: 5px;
+        font-weight: normal;
+      }
+
+      /* Estilos para los logos de tecnologías específicas */
+      .tech-icon-php {
+        color: #777bb4;
+      }
+
+      .tech-icon-wordpress {
+        color: #21759b;
+      }
+
+      .tech-icon-angular {
+        color: #dd0031;
+      }
+
+      .tech-icon-jquery {
+        color: #0769ad;
+      }
+      /* Nueva sección Parallax */
+      .parallax-section {
+        background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 400px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        overflow: hidden;
+      }
+
+      .parallax-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(
+          33,
+          28,
+          132,
+          0.7
+        ); /* Fondo semitransparente con color primario */
+      }
+
+      .parallax-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        padding: 0 20px;
+      }
+
+      .parallax-section h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .parallax-section p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      @media (max-width: 768px) {
         .parallax-section {
-            background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 400px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            overflow: hidden;
+          background-attachment: scroll;
+          height: 300px;
         }
-        
-        .parallax-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(33, 28, 132, 0.7); /* Fondo semitransparente con color primario */
-        }
-        
-        .parallax-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            padding: 0 20px;
-        }
-        
+
         .parallax-section h2 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          font-size: 2rem;
         }
-        
-        .parallax-section p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        }
-        
-        @media (max-width: 768px) {
-            .parallax-section {
-                background-attachment: scroll;
-                height: 300px;
-            }
-            
-            .parallax-section h2 {
-                font-size: 2rem;
-            }
-        }
+      }
 
-        /* Estilos para la línea de tiempo */
-        .timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+      /* Estilos para la línea de tiempo */
+      .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
 
+      .timeline::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        background-color: var(--secondary);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+        border-radius: 10px;
+      }
+
+      .timeline-container {
+        padding: 10px 40px;
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+      }
+
+      .timeline-container::after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: -17px;
+        background-color: white;
+        border: 4px solid var(--accent);
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .left {
+        left: 0;
+      }
+
+      .right {
+        left: 50%;
+      }
+
+      .left::before {
+        content: ' ';
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        right: 30px;
+        border: medium solid rgba(255, 255, 255, 0.9);
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent
+          rgba(255, 255, 255, 0.9);
+      }
+
+      .right::before {
+        content: ' ';
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        left: 30px;
+        border: medium solid rgba(255, 255, 255, 0.9);
+        border-width: 10px 10px 10px 0;
+        border-color: transparent rgba(255, 255, 255, 0.9) transparent
+          transparent;
+      }
+
+      .right::after {
+        left: -16px;
+      }
+
+      .timeline-content {
+        padding: 20px 30px;
+        background-color: rgba(255, 255, 255, 0.9);
+        position: relative;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .timeline-content:hover {
+        transform: translateY(-5px);
+      }
+
+      .timeline h3 {
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      .tech-tags {
+        margin-top: 15px;
+      }
+
+      .divider-line {
+        width: 80px;
+        height: 4px;
+        margin-top: 15px;
+        margin-bottom: 30px;
+      }
+
+      /* Responsive */
+      @media screen and (max-width: 768px) {
         .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: var(--secondary);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-            border-radius: 10px;
+          left: 31px;
         }
 
         .timeline-container {
-            padding: 10px 40px;
-            position: relative;
-            background-color: inherit;
-            width: 50%;
+          width: 100%;
+          padding-left: 70px;
+          padding-right: 25px;
         }
 
-        .timeline-container::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -17px;
-            background-color: white;
-            border: 4px solid var(--accent);
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
+        .timeline-container::before {
+          left: 60px;
+          border: medium solid white;
+          border-width: 10px 10px 10px 0;
+          border-color: transparent white transparent transparent;
         }
 
-        .left {
-            left: 0;
+        .left::after,
+        .right::after {
+          left: 15px;
         }
 
         .right {
-            left: 50%;
+          left: 0%;
         }
+      }
+      /* Estilo del botón */
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        animation: pulse 2s infinite;
+        text-decoration: none;
+      }
 
-        .left::before {
-            content: " ";
-            height: 0;
-            position: absolute;
-            top: 22px;
-            width: 0;
-            z-index: 1;
-            right: 30px;
-            border: medium solid rgba(255, 255, 255, 0.9);
-            border-width: 10px 0 10px 10px;
-            border-color: transparent transparent transparent rgba(255, 255, 255, 0.9);
-        }
+      /* Efecto hover */
+      .whatsapp-float:hover {
+        background-color: #128c7e;
+        transform: scale(1.1);
+        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+      }
 
-        .right::before {
-            content: " ";
-            height: 0;
-            position: absolute;
-            top: 22px;
-            width: 0;
-            z-index: 1;
-            left: 30px;
-            border: medium solid rgba(255, 255, 255, 0.9);
-            border-width: 10px 10px 10px 0;
-            border-color: transparent rgba(255, 255, 255, 0.9) transparent transparent;
-        }
+      /* Tooltip */
+      .tooltip {
+        position: absolute;
+        right: 70px;
+        width: max-content;
+        background: #075e54;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 500;
+        opacity: 0;
+        transition: all 0.3s ease;
+        pointer-events: none;
+      }
 
-        .right::after {
-            left: -16px;
-        }
+      .whatsapp-float:hover .tooltip {
+        opacity: 1;
+        right: 75px;
+      }
 
-        .timeline-content {
-            padding: 20px 30px;
-            background-color: rgba(255, 255, 255, 0.9);
-            position: relative;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+      /* Animación de pulso */
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
         }
+        70% {
+          box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+      }
 
-        .timeline-content:hover {
-            transform: translateY(-5px);
-        }
-
-        .timeline h3 {
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        .tech-tags {
-            margin-top: 15px;
-        }
-
-        .divider-line {
-            width: 80px;
-            height: 4px;
-            margin-top: 15px;
-            margin-bottom: 30px;
-        }
-
-        /* Responsive */
-        @media screen and (max-width: 768px) {
-            .timeline::after {
-                left: 31px;
-            }
-            
-            .timeline-container {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-            
-            .timeline-container::before {
-                left: 60px;
-                border: medium solid white;
-                border-width: 10px 10px 10px 0;
-                border-color: transparent white transparent transparent;
-            }
-            
-            .left::after, .right::after {
-                left: 15px;
-            }
-            
-            .right {
-                left: 0%;
-            }
-        }
-        /* Estilo del botón */
+      /* Responsive */
+      @media (max-width: 768px) {
         .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25D366;
-            color: white;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite;
-            text-decoration: none;
+          width: 50px;
+          height: 50px;
+          font-size: 25px;
+          bottom: 20px;
+          right: 20px;
         }
 
-        /* Efecto hover */
-        .whatsapp-float:hover {
-            background-color: #128C7E;
-            transform: scale(1.1);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-        }
-
-        /* Tooltip */
         .tooltip {
-            position: absolute;
-            right: 70px;
-            width: max-content;
-            background: #075E54;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 5px;
-            font-size: 14px;
-            font-weight: 500;
-            opacity: 0;
-            transition: all 0.3s ease;
-            pointer-events: none;
+          display: none;
         }
-
-        .whatsapp-float:hover .tooltip {
-            opacity: 1;
-            right: 75px;
-        }
-
-        /* Animación de pulso */
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                font-size: 25px;
-                bottom: 20px;
-                right: 20px;
-            }
-            
-            .tooltip {
-                display: none;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-custom fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">DevByPaulSalinas</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#inicio">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tecnologias">Tecnologías</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#proyectos">Proyectos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contacto">Contacto</a>
-                    </li>
-                </ul>
-            </div>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-primary-custom fixed-top"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">DevByPaulSalinas</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#inicio">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tecnologias">Tecnologías</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#proyectos">Proyectos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto">Contacto</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <!-- Hero Section Ultra Moderno con Glassmorphism -->
     <section id="inicio" class="hero-section">
-        <!-- Efecto de partículas dinámicas -->
-        <div id="particles-js"></div>
-        
-        <!-- Contenido principal -->
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span>25+ años creando soluciones digitales</span>
-                </div>
-                
-                <h1 class="hero-title">
-                    <span class="title-line">De <span class="text-stroke">COBOL</span></span>
-                    <span class="title-line">a <span class="text-gradient">Desarrollo Web</span></span>
-                </h1>
-                
-                <p class="hero-description">
-                    Transformando negocios a través de múltiples generaciones tecnológicas con soluciones robustas y escalables.
-                </p>
-                
-                <div class="hero-actions">
-                    <a href="#proyectos" class="btn-magnetic">
-                        <span class="btn-content">
-                            <i class="fas fa-code"></i>
-                            Ver Proyectos
-                        </span>
-                        <span class="btn-background"></span>
-                    </a>
-                    
-                    <a href="#contacto" class="btn-magnetic secondary">
-                        <span class="btn-content">
-                            <i class="fas fa-rocket"></i>
-                            Colaborar
-                        </span>
-                        <span class="btn-background"></span>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="hero-visual">
-                <div class="tech-sphere">
-                    <!-- Esfera de tecnologías -->
-                    <div class="sphere-container">
-                        <div class="sphere">
-                            <div class="ring ring-1">
-                                <div class="tech-item" style="--i:1">COBOL</div>
-                                <div class="tech-item" style="--i:2">Pascal</div>
-                                <div class="tech-item" style="--i:3">VB6</div>
-                                <div class="tech-item" style="--i:4">.NET</div>
-                            </div>
-                            <div class="ring ring-2">
-                                <div class="tech-item" style="--i:1">PHP</div>
-                                <div class="tech-item" style="--i:2">jQuery</div>
-                                <div class="tech-item" style="--i:3">WordPress</div>
-                                <div class="tech-item" style="--i:4">MySQL</div>
-                            </div>
-                            <div class="ring ring-3">
-                                <div class="tech-item" style="--i:1">Angular</div>
-                                <div class="tech-item" style="--i:2">React</div>
-                                <div class="tech-item" style="--i:3">Node.js</div>
-                                <div class="tech-item" style="--i:4">Python</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Waves animadas -->
-        <div class="hero-waves">
-            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-                <defs>
-                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-                </defs>
-                <g class="parallax">
-                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
-                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-                </g>
-            </svg>
-        </div>
-    </section>
+      <!-- Efecto de partículas dinámicas -->
+      <div id="particles-js"></div>
 
+      <!-- Contenido principal -->
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span>25+ años creando soluciones digitales</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="title-line"
+              >De <span class="text-stroke">COBOL</span></span
+            >
+            <span class="title-line"
+              >a <span class="text-gradient">Desarrollo Web</span></span
+            >
+          </h1>
+
+          <p class="hero-description">
+            Transformando negocios a través de múltiples generaciones
+            tecnológicas con soluciones robustas y escalables.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#proyectos" class="btn-magnetic">
+              <span class="btn-content">
+                <i class="fas fa-code"></i>
+                Ver Proyectos
+              </span>
+              <span class="btn-background"></span>
+            </a>
+
+            <a href="#contacto" class="btn-magnetic secondary">
+              <span class="btn-content">
+                <i class="fas fa-rocket"></i>
+                Colaborar
+              </span>
+              <span class="btn-background"></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="tech-sphere">
+            <!-- Esfera de tecnologías -->
+            <div class="sphere-container">
+              <div class="sphere">
+                <div class="ring ring-1">
+                  <div class="tech-item" style="--i: 1">COBOL</div>
+                  <div class="tech-item" style="--i: 2">Pascal</div>
+                  <div class="tech-item" style="--i: 3">VB6</div>
+                  <div class="tech-item" style="--i: 4">.NET</div>
+                </div>
+                <div class="ring ring-2">
+                  <div class="tech-item" style="--i: 1">PHP</div>
+                  <div class="tech-item" style="--i: 2">jQuery</div>
+                  <div class="tech-item" style="--i: 3">WordPress</div>
+                  <div class="tech-item" style="--i: 4">MySQL</div>
+                </div>
+                <div class="ring ring-3">
+                  <div class="tech-item" style="--i: 1">Angular</div>
+                  <div class="tech-item" style="--i: 2">React</div>
+                  <div class="tech-item" style="--i: 3">Node.js</div>
+                  <div class="tech-item" style="--i: 4">Python</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Waves animadas -->
+      <div class="hero-waves">
+        <svg
+          class="waves"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 28"
+          preserveAspectRatio="none"
+          shape-rendering="auto"
+        >
+          <defs>
+            <path
+              id="gentle-wave"
+              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+            />
+          </defs>
+          <g class="parallax">
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="0"
+              fill="rgba(255,255,255,0.7)"
+            />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="3"
+              fill="rgba(255,255,255,0.5)"
+            />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="5"
+              fill="rgba(255,255,255,0.3)"
+            />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+          </g>
+        </svg>
+      </div>
+    </section>
 
     <!-- Tecnologías Section -->
     <section id="tecnologias" class="py-5 bg-light">
-        <div class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Tecnologías que impulsan mis soluciones</h2>
-                <p class="text-muted">Herramientas y tecnologías con las que trabajo diariamente</p>
-            </div>
-            
-            <!-- Carousel de Tecnologías -->
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div id="techCarousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner text-center">
-                            <div class="carousel-item active">
-                                <div class="d-flex justify-content-center flex-wrap">
-                                    <div class="mx-4 my-3">
-                                        <i class="fab fa-html5 tech-icon" title="HTML5"></i>
-                                        <p class="mt-2">HTML5</p>
-                                    </div>
-                                    <div class="mx-4 my-3">
-                                        <i class="fab fa-css3-alt tech-icon" title="CSS3"></i>
-                                        <p class="mt-2">CSS3</p>
-                                    </div>
-                                    <div class="mx-4 my-3">
-                                        <i class="fab fa-js tech-icon" title="JavaScript"></i>
-                                        <p class="mt-2">JavaScript</p>
-                                    </div>
-                                    <div class="mx-4 my-3">
-                                        <i class="fab fa-angular tech-icon tech-icon-angular" title="Angular"></i>
-                                        <p class="mt-2">Angular</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="d-flex justify-content-center flex-wrap">
-                                    <div class="mx-4 my-3">
-                                        <i class="fab fa-php tech-icon tech-icon-php" title="PHP"></i>
-                                        <p class="mt-2">PHP</p>
-                                    </div>
-                                    <div class="mx-4 my-3">
-                                        <i class="fab fa-wordpress tech-icon tech-icon-wordpress" title="WordPress"></i>
-                                        <p class="mt-2">WordPress</p>
-                                    </div>
-                                    <div class="mx-4 my-3">
-                                        <i class="fas fa-code tech-icon tech-icon-jquery" title="jQuery"></i>
-                                        <p class="mt-2">jQuery</p>
-                                    </div>
-                                    <div class="mx-4 my-3">
-                                        <i class="fab fa-react tech-icon" title="React"></i>
-                                        <p class="mt-2">React</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="d-flex justify-content-center flex-wrap">
-                                    <div class="mx-4 my-3">
-                                        <i class="fab fa-node-js tech-icon" title="Node.js"></i>
-                                        <p class="mt-2">Node.js</p>
-                                    </div>
-                                    <div class="mx-4 my-3">
-                                        <i class="fab fa-bootstrap tech-icon" title="Bootstrap"></i>
-                                        <p class="mt-2">Bootstrap</p>
-                                    </div>
-                                    <div class="mx-4 my-3">
-                                        <i class="fab fa-git-alt tech-icon" title="Git"></i>
-                                        <p class="mt-2">Git</p>
-                                    </div>
-                                    <div class="mx-4 my-3">
-                                        <i class="fas fa-database tech-icon" title="SQL"></i>
-                                        <p class="mt-2">SQL</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#techCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon bg-secondary-custom rounded-circle p-3" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#techCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon bg-secondary-custom rounded-circle p-3" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
+      <div class="container py-5">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold">Tecnologías que impulsan mis soluciones</h2>
+          <p class="text-muted">
+            Herramientas y tecnologías con las que trabajo diariamente
+          </p>
         </div>
+
+        <!-- Carousel de Tecnologías -->
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div
+              id="techCarousel"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner text-center">
+                <div class="carousel-item active">
+                  <div class="d-flex justify-content-center flex-wrap">
+                    <div class="mx-4 my-3">
+                      <i class="fab fa-html5 tech-icon" title="HTML5"></i>
+                      <p class="mt-2">HTML5</p>
+                    </div>
+                    <div class="mx-4 my-3">
+                      <i class="fab fa-css3-alt tech-icon" title="CSS3"></i>
+                      <p class="mt-2">CSS3</p>
+                    </div>
+                    <div class="mx-4 my-3">
+                      <i class="fab fa-js tech-icon" title="JavaScript"></i>
+                      <p class="mt-2">JavaScript</p>
+                    </div>
+                    <div class="mx-4 my-3">
+                      <i
+                        class="fab fa-angular tech-icon tech-icon-angular"
+                        title="Angular"
+                      ></i>
+                      <p class="mt-2">Angular</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="d-flex justify-content-center flex-wrap">
+                    <div class="mx-4 my-3">
+                      <i
+                        class="fab fa-php tech-icon tech-icon-php"
+                        title="PHP"
+                      ></i>
+                      <p class="mt-2">PHP</p>
+                    </div>
+                    <div class="mx-4 my-3">
+                      <i
+                        class="fab fa-wordpress tech-icon tech-icon-wordpress"
+                        title="WordPress"
+                      ></i>
+                      <p class="mt-2">WordPress</p>
+                    </div>
+                    <div class="mx-4 my-3">
+                      <i
+                        class="fas fa-code tech-icon tech-icon-jquery"
+                        title="jQuery"
+                      ></i>
+                      <p class="mt-2">jQuery</p>
+                    </div>
+                    <div class="mx-4 my-3">
+                      <i class="fab fa-react tech-icon" title="React"></i>
+                      <p class="mt-2">React</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="d-flex justify-content-center flex-wrap">
+                    <div class="mx-4 my-3">
+                      <i class="fab fa-node-js tech-icon" title="Node.js"></i>
+                      <p class="mt-2">Node.js</p>
+                    </div>
+                    <div class="mx-4 my-3">
+                      <i
+                        class="fab fa-bootstrap tech-icon"
+                        title="Bootstrap"
+                      ></i>
+                      <p class="mt-2">Bootstrap</p>
+                    </div>
+                    <div class="mx-4 my-3">
+                      <i class="fab fa-git-alt tech-icon" title="Git"></i>
+                      <p class="mt-2">Git</p>
+                    </div>
+                    <div class="mx-4 my-3">
+                      <i class="fas fa-database tech-icon" title="SQL"></i>
+                      <p class="mt-2">SQL</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#techCarousel"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon bg-secondary-custom rounded-circle p-3"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#techCarousel"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon bg-secondary-custom rounded-circle p-3"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="trayectoria" class="bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <div class="text-center mb-5">
-                        <h2 class="fw-bold">De COBOL a la Nube: <span class="text-accent">25+ Años de Evolución Tecnológica</span></h2>
-                        <div class="divider-line bg-secondary-custom mx-auto"></div>
-                    </div>
-                    
-                    <div class="timeline">
-                        <div class="timeline-container left">
-                            <div class="timeline-content">
-                                <h3>1998-2005: Cimientos Estructurales</h3>
-                                <p class="text-muted"><i class="fas fa-calendar-alt me-2"></i>Era de los Lenguajes Estructurados</p>
-                                <p>Inicié mi carrera profesional desarrollando sistemas empresariales en <strong>COBOL</strong> para mainframes IBM, dominando conceptos fundamentales de programación estructurada y gestión de datos jerárquicos. Paralelamente, implementé soluciones desktop con <strong>Pascal</strong> (Turbo Pascal, Delphi) aplicando principios de programación modular, lo que sentó las bases para mi comprensión profunda de estructuras de datos y algoritmos.</p>
-                                <div class="tech-tags">
-                                    <span class="badge bg-primary-custom">COBOL</span>
-                                    <span class="badge bg-primary-custom">Pascal</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-container right">
-                            <div class="timeline-content">
-                                <h3>2005-2012: Revolución Visual</h3>
-                                <p class="text-muted"><i class="fas fa-calendar-alt me-2"></i>Transición al Paradigma Orientado a Objetos</p>
-                                <p>Adapté mis conocimientos al desarrollo Windows con <strong>Visual Basic</strong> (VB6, VBA) y posteriormente a .NET Framework, donde adquirí competencias avanzadas en programación orientada a objetos, patrones de diseño y arquitectura cliente-servidor. Este período marcó mi transición de sistemas batch a aplicaciones interactivas, desarrollando soluciones ERP para diversos proyectos.</p>
-                                <div class="tech-tags">
-                                    <span class="badge bg-secondary-custom">VB6</span>
-                                    <span class="badge bg-secondary-custom">.NET</span>
-                                    <span class="badge bg-secondary-custom">SQL Server</span>
-                                    <span class="badge bg-secondary-custom">Crystal Reports</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-container left">
-                            <div class="timeline-content">
-                                <h3>2012-2018: Era Web</h3>
-                                <p class="text-muted"><i class="fas fa-calendar-alt me-2"></i>Adopción de Tecnologías Abiertas</p>
-                                <p>Anticipando la transformación digital, migré al desarrollo web full stack, dominando los ecosistemas <strong>LAMP</strong> (Linux, Apache, MySQL, PHP) y <strong>WAMP</strong> (Windows,  Apache, MySQL, PHP).</p>
-                                <div class="tech-tags">
-                                    <span class="badge bg-tertiary-custom">PHP</span>
-                                    <span class="badge bg-tertiary-custom">jQuery</span>
-                                    <span class="badge bg-tertiary-custom">AngularJS</span>
-                                    <span class="badge bg-tertiary-custom">WordPress</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-container right">
-                            <div class="timeline-content">
-                                <h3>2018-Presente: Modernidad y Versatilidad</h3>
-                                <p class="text-muted"><i class="fas fa-calendar-alt me-2"></i>Arquitecturas Distribuidas e Inteligencia Artificial</p>
-                                <p>Actualmente diseño sistemas escalables basados en <strong>Angular</strong>, <strong>React</strong> y frameworks modernos de backend (Node.js, Django). Mi experiencia acumulada me permite analizar requerimientos complejos y seleccionar el stack tecnológico óptimo para cada solución, combinando lo mejor de paradigmas antiguos y modernos.</p>
-                                <div class="tech-tags">
-                                    <span class="badge bg-tertiary-custom">Node.js</span>
-                                    <span class="badge bg-tertiary-custom">React</span>
-                                    <span class="badge bg-tertiary-custom">Python</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="evolution-summary mt-3 mb-4 p-4 rounded-3" style="background-color: rgba(122, 115, 209, 0.1);">
-                        <h4 class="fw-bold mb-3">Conclusión: Polivalencia Tecnológica</h4>
-                        <p>Esta trayectoria me ha dotado de una <strong>perspectiva única</strong> en el desarrollo de software:</p>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-check-circle text-accent me-2"></i> <strong>Adaptabilidad comprobada.</strong> 5 generaciones tecnológicas</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-accent me-2"></i> <strong>Capacidad analítica</strong> para evaluar desafíos tecnológicos</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-accent me-2"></i> <strong>Mentalidad ágil</strong> para aprendizaje continuo</li>
-                            <li><i class="fas fa-check-circle text-accent me-2"></i> <strong>Capacidad para trabajar en equipo</strong></li>
-                        </ul>
-                        <p class="mt-3 mb-0">Actualmente, mi experiencia me permite aportar valor en cualquier contexto tecnológico.</p>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <div class="text-center mb-5">
+              <h2 class="fw-bold">
+                De COBOL a la Nube:
+                <span class="text-accent"
+                  >25+ Años de Evolución Tecnológica</span
+                >
+              </h2>
+              <div class="divider-line bg-secondary-custom mx-auto"></div>
             </div>
+
+            <div class="timeline">
+              <div class="timeline-container left">
+                <div class="timeline-content">
+                  <h3>1998-2005: Cimientos Estructurales</h3>
+                  <p class="text-muted">
+                    <i class="fas fa-calendar-alt me-2"></i>Era de los Lenguajes
+                    Estructurados
+                  </p>
+                  <p>
+                    Inicié mi carrera profesional desarrollando sistemas
+                    empresariales en <strong>COBOL</strong> para mainframes IBM,
+                    dominando conceptos fundamentales de programación
+                    estructurada y gestión de datos jerárquicos. Paralelamente,
+                    implementé soluciones desktop con
+                    <strong>Pascal</strong> (Turbo Pascal, Delphi) aplicando
+                    principios de programación modular, lo que sentó las bases
+                    para mi comprensión profunda de estructuras de datos y
+                    algoritmos.
+                  </p>
+                  <div class="tech-tags">
+                    <span class="badge bg-primary-custom">COBOL</span>
+                    <span class="badge bg-primary-custom">Pascal</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-container right">
+                <div class="timeline-content">
+                  <h3>2005-2012: Revolución Visual</h3>
+                  <p class="text-muted">
+                    <i class="fas fa-calendar-alt me-2"></i>Transición al
+                    Paradigma Orientado a Objetos
+                  </p>
+                  <p>
+                    Adapté mis conocimientos al desarrollo Windows con
+                    <strong>Visual Basic</strong> (VB6, VBA) y posteriormente a
+                    .NET Framework, donde adquirí competencias avanzadas en
+                    programación orientada a objetos, patrones de diseño y
+                    arquitectura cliente-servidor. Este período marcó mi
+                    transición de sistemas batch a aplicaciones interactivas,
+                    desarrollando soluciones ERP para diversos proyectos.
+                  </p>
+                  <div class="tech-tags">
+                    <span class="badge bg-secondary-custom">VB6</span>
+                    <span class="badge bg-secondary-custom">.NET</span>
+                    <span class="badge bg-secondary-custom">SQL Server</span>
+                    <span class="badge bg-secondary-custom"
+                      >Crystal Reports</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-container left">
+                <div class="timeline-content">
+                  <h3>2012-2018: Era Web</h3>
+                  <p class="text-muted">
+                    <i class="fas fa-calendar-alt me-2"></i>Adopción de
+                    Tecnologías Abiertas
+                  </p>
+                  <p>
+                    Anticipando la transformación digital, migré al desarrollo
+                    web full stack, dominando los ecosistemas
+                    <strong>LAMP</strong> (Linux, Apache, MySQL, PHP) y
+                    <strong>WAMP</strong> (Windows, Apache, MySQL, PHP).
+                  </p>
+                  <div class="tech-tags">
+                    <span class="badge bg-tertiary-custom">PHP</span>
+                    <span class="badge bg-tertiary-custom">jQuery</span>
+                    <span class="badge bg-tertiary-custom">AngularJS</span>
+                    <span class="badge bg-tertiary-custom">WordPress</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-container right">
+                <div class="timeline-content">
+                  <h3>2018-Presente: Modernidad y Versatilidad</h3>
+                  <p class="text-muted">
+                    <i class="fas fa-calendar-alt me-2"></i>Arquitecturas
+                    Distribuidas e Inteligencia Artificial
+                  </p>
+                  <p>
+                    Actualmente diseño sistemas escalables basados en
+                    <strong>Angular</strong>, <strong>React</strong> y
+                    frameworks modernos de backend (Node.js, Django). Mi
+                    experiencia acumulada me permite analizar requerimientos
+                    complejos y seleccionar el stack tecnológico óptimo para
+                    cada solución, combinando lo mejor de paradigmas antiguos y
+                    modernos.
+                  </p>
+                  <div class="tech-tags">
+                    <span class="badge bg-tertiary-custom">Node.js</span>
+                    <span class="badge bg-tertiary-custom">React</span>
+                    <span class="badge bg-tertiary-custom">Python</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="evolution-summary mt-3 mb-4 p-4 rounded-3"
+              style="background-color: rgba(122, 115, 209, 0.1)"
+            >
+              <h4 class="fw-bold mb-3">Conclusión: Polivalencia Tecnológica</h4>
+              <p>
+                Esta trayectoria me ha dotado de una
+                <strong>perspectiva única</strong> en el desarrollo de software:
+              </p>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-accent me-2"></i>
+                  <strong>Adaptabilidad comprobada.</strong> 5 generaciones
+                  tecnológicas
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-accent me-2"></i>
+                  <strong>Capacidad analítica</strong> para evaluar desafíos
+                  tecnológicos
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-accent me-2"></i>
+                  <strong>Mentalidad ágil</strong> para aprendizaje continuo
+                </li>
+                <li>
+                  <i class="fas fa-check-circle text-accent me-2"></i>
+                  <strong>Capacidad para trabajar en equipo</strong>
+                </li>
+              </ul>
+              <p class="mt-3 mb-0">
+                Actualmente, mi experiencia me permite aportar valor en
+                cualquier contexto tecnológico.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <section class="parallax-section">
-        <div class="parallax-content">
-            <h2>Transformando ideas en experiencias digitales</h2>
-            <p>Cada línea de código es una oportunidad para crear algo extraordinario. Combinando diseño, funcionalidad y performance para lograr los mejores resultados.</p>
-            <a href="#proyectos" class="btn btn-accent btn-lg">Ver mis proyectos</a>
-        </div>
+      <div class="parallax-content">
+        <h2>Transformando ideas en experiencias digitales</h2>
+        <p>
+          Cada línea de código es una oportunidad para crear algo
+          extraordinario. Combinando diseño, funcionalidad y performance para
+          lograr los mejores resultados.
+        </p>
+        <a href="#proyectos" class="btn btn-accent btn-lg">Ver mis proyectos</a>
+      </div>
     </section>
 
     <!-- Proyectos Section -->
     <section id="proyectos" class="py-5">
-        <div class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Últimos 3 Proyectos</h2>
-                <p class="text-muted">Algunos de mis trabajos recientes</p>
-            </div>
-            
-            <div class="row">
-                <!-- Proyecto 1 - Angular -->
-                <div class="col-md-4">
-                    <div class="project-card card h-100">
-                        <img src="https://i.ibb.co/R4Nw2cfd/2025-04-02-08h40-44.png" class="card-img-top" alt="Aplicación Angular">
-                        <div class="card-body">
-                            <div class="mb-2">
-                                <span class="badge">Angular</span>
-                                <span class="badge">TypeScript</span>
-                                <span class="badge">RxJS</span>
-                                <span class="badge">NodeJS</span>
-                                <span class="badge">CCS3</span>
-                                <span class="badge">Bootstrap</span>
-                            </div>
-                            <h5 class="card-title">Sistema Integrado de Gestión de Pedidos en Tiempo Real</h5>
-                            <p class="card-text">Revolucioné el proceso de ventas con una plataforma web que sincroniza pedidos, inventario y facturación al instante. Desde la selección de productos hasta la generación automática de documentos PDF y notificaciones por email, eliminé cuellos de botella y reduje un 40% los tiempos de procesamiento. Integración perfecta con sistemas D3xD para una transición digital sin fricciones. </p>
-                            <a href="#" class="btn btn-sm btn-primary">Ver Detalles</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Proyecto 2 - WordPress -->
-                <div class="col-md-4">
-                    <div class="project-card card h-100">
-                        <img src="https://i.ibb.co/8L6vpjgW/2025-04-02-09h10-05.png" class="card-img-top" alt="Sitio WordPress">
-                        <div class="card-body">
-                            <div class="mb-2">
-                                <span class="badge">WordPress</span>
-                                <span class="badge">PHP</span>
-                                <span class="badge">CCS3</span>
-                            </div>
-                            <h5 class="card-title">Sitio web</h5>
-                            <p class="card-text">Sitio web profesional en WordPress que combina alto rendimiento con gestión de contenidos intuitiva. Implementé un diseño responsive basado en el constructor Elementor, optimizado para SEO y velocidad de carga</p>
-                            <a href="https://pacificmetalsusa.com/" class="btn btn-sm btn-primary" target="_blank">Ver Detalles</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Proyecto 3 - PHP/jQuery -->
-                <div class="col-md-4">
-                    <div class="project-card card h-100">
-                        <img src="https://i.ibb.co/8nDDwqNC/2025-04-02-09h11-09.png" class="card-img-top" alt="Aplicación PHP">
-                        <div class="card-body">
-                            <div class="mb-2">
-                                <span class="badge">WordPress</span>
-                                <span class="badge">PHP</span>
-                                <span class="badge">CCS3</span>
-                            </div>
-                            <h5 class="card-title">Sitio web</h5>
-                            <p class="card-text">Sitio web corporativo desarrollado en WordPress con arquitectura headless, combinando la flexibilidad del CMS con un frontend en React para ofrecer rendimiento de alto nivel. Optimización SEO optimizado con un sistema de caché avanzado. El diseño responsive, construido con Elementor Pro y un tema hijo personalizado.</p>
-                            <a href="https://bestpartnersolution.com/" class="btn btn-sm btn-primary" target="_blank">Ver Detalles</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container py-5">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold">Últimos 3 Proyectos</h2>
+          <p class="text-muted">Algunos de mis trabajos recientes</p>
         </div>
+
+        <div class="row">
+          <!-- Proyecto 1 - Angular -->
+          <div class="col-md-4">
+            <div class="project-card card h-100">
+              <img
+                src="https://i.ibb.co/R4Nw2cfd/2025-04-02-08h40-44.png"
+                class="card-img-top"
+                alt="Aplicación Angular"
+              />
+              <div class="card-body">
+                <div class="mb-2">
+                  <span class="badge">Angular</span>
+                  <span class="badge">TypeScript</span>
+                  <span class="badge">RxJS</span>
+                  <span class="badge">NodeJS</span>
+                  <span class="badge">CCS3</span>
+                  <span class="badge">Bootstrap</span>
+                </div>
+                <h5 class="card-title">
+                  Sistema Integrado de Gestión de Pedidos en Tiempo Real
+                </h5>
+                <p class="card-text">
+                  Revolucioné el proceso de ventas con una plataforma web que
+                  sincroniza pedidos, inventario y facturación al instante.
+                  Desde la selección de productos hasta la generación automática
+                  de documentos PDF y notificaciones por email, eliminé cuellos
+                  de botella y reduje un 40% los tiempos de procesamiento.
+                  Integración perfecta con sistemas D3xD para una transición
+                  digital sin fricciones.
+                </p>
+                <a
+                  href="https://salinaspaul1974.github.io/portafolio/cs.html"
+                  class="btn btn-sm btn-primary"
+                  >Ver Detalles</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyecto 2 - WordPress -->
+          <div class="col-md-4">
+            <div class="project-card card h-100">
+              <img
+                src="https://i.ibb.co/8L6vpjgW/2025-04-02-09h10-05.png"
+                class="card-img-top"
+                alt="Sitio WordPress"
+              />
+              <div class="card-body">
+                <div class="mb-2">
+                  <span class="badge">WordPress</span>
+                  <span class="badge">PHP</span>
+                  <span class="badge">CCS3</span>
+                </div>
+                <h5 class="card-title">Sitio web</h5>
+                <p class="card-text">
+                  Sitio web profesional en WordPress que combina alto
+                  rendimiento con gestión de contenidos intuitiva. Implementé un
+                  diseño responsive basado en el constructor Elementor,
+                  optimizado para SEO y velocidad de carga
+                </p>
+                <a
+                  href="https://pacificmetalsusa.com/"
+                  class="btn btn-sm btn-primary"
+                  target="_blank"
+                  >Ver Detalles</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyecto 3 - PHP/jQuery -->
+          <div class="col-md-4">
+            <div class="project-card card h-100">
+              <img
+                src="https://i.ibb.co/8nDDwqNC/2025-04-02-09h11-09.png"
+                class="card-img-top"
+                alt="Aplicación PHP"
+              />
+              <div class="card-body">
+                <div class="mb-2">
+                  <span class="badge">WordPress</span>
+                  <span class="badge">PHP</span>
+                  <span class="badge">CCS3</span>
+                </div>
+                <h5 class="card-title">Sitio web</h5>
+                <p class="card-text">
+                  Sitio web corporativo desarrollado en WordPress con
+                  arquitectura headless, combinando la flexibilidad del CMS con
+                  un frontend en React para ofrecer rendimiento de alto nivel.
+                  Optimización SEO optimizado con un sistema de caché avanzado.
+                  El diseño responsive, construido con Elementor Pro y un tema
+                  hijo personalizado.
+                </p>
+                <a
+                  href="https://bestpartnersolution.com/"
+                  class="btn btn-sm btn-primary"
+                  target="_blank"
+                  >Ver Detalles</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Contacto Section -->
     <section class="py-5 bg-primary text-center">
-        <div class="container py-4">
-            <h3 class="text-white mb-4">¿Listo para trabajar juntos?</h3>
-            <a href="https://wa.me/584148087184" 
-              target="_blank" 
-              class="btn btn-light btn-lg rounded-pill px-4">
-               <i class="fab fa-whatsapp text-success me-2"></i> Conversemos por WhatsApp
-            </a>
-            <p class="text-white-50 mt-3 mb-0">O escríbeme a: <a href="mailto:tu@email.com" class="text-white">salinaspaul1974@gmail.com</a></p>
-        </div>
+      <div class="container py-4">
+        <h3 class="text-white mb-4">¿Listo para trabajar juntos?</h3>
+        <a
+          href="https://wa.me/584148087184"
+          target="_blank"
+          class="btn btn-light btn-lg rounded-pill px-4"
+        >
+          <i class="fab fa-whatsapp text-success me-2"></i> Conversemos por
+          WhatsApp
+        </a>
+        <p class="text-white-50 mt-3 mb-0">
+          O escríbeme a:
+          <a href="mailto:tu@email.com" class="text-white"
+            >salinaspaul1974@gmail.com</a
+          >
+        </p>
+      </div>
     </section>
 
-    <a href="https://wa.me/584148087184?text=Hola,%20vi%20tu%20portafolio%20y%20me%20gustaría%20conversar" 
-       class="whatsapp-float" 
-       target="_blank"
-       aria-label="Contactar por WhatsApp">
-       <i class="fab fa-whatsapp"></i>
-       <span class="tooltip">¡Hablemos!</span>
+    <a
+      href="https://wa.me/584148087184?text=Hola,%20vi%20tu%20portafolio%20y%20me%20gustaría%20conversar"
+      class="whatsapp-float"
+      target="_blank"
+      aria-label="Contactar por WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+      <span class="tooltip">¡Hablemos!</span>
     </a>
 
     <!-- Footer -->
     <footer class="text-center">
-        <div class="container">
-<!--             <div class="mb-4">
+      <div class="container">
+        <!--             <div class="mb-4">
                 <a href="#" class="text-white mx-3"><i class="fab fa-github fa-2x"></i></a>
                 <a href="#" class="text-white mx-3"><i class="fab fa-linkedin fa-2x"></i></a>
                 <a href="#" class="text-white mx-3"><i class="fab fa-twitter fa-2x"></i></a>
                 <a href="#" class="text-white mx-3"><i class="fab fa-instagram fa-2x"></i></a>
             </div> -->
-            <p class="mb-0">© 2025 DevByPaulSalinas. Todos los derechos reservados.</p>
-        </div>
+        <p class="mb-0">
+          © 2025 DevByPaulSalinas. Todos los derechos reservados.
+        </p>
+      </div>
     </footer>
     <script>
-        // Particles.js para el fondo dinámico
-        document.addEventListener('DOMContentLoaded', function() {
-            // Configuración de particles.js
-            particlesJS('particles-js', {
-                "particles": {
-                    "number": {
-                        "value": 80,
-                        "density": {
-                            "enable": true,
-                            "value_area": 800
-                        }
-                    },
-                    "color": {
-                        "value": "#ffffff"
-                    },
-                    "shape": {
-                        "type": "circle",
-                        "stroke": {
-                            "width": 0,
-                            "color": "#000000"
-                        }
-                    },
-                    "opacity": {
-                        "value": 0.3,
-                        "random": true,
-                        "anim": {
-                            "enable": true,
-                            "speed": 1,
-                            "opacity_min": 0.1,
-                            "sync": false
-                        }
-                    },
-                    "size": {
-                        "value": 3,
-                        "random": true,
-                        "anim": {
-                            "enable": true,
-                            "speed": 2,
-                            "size_min": 0.1,
-                            "sync": false
-                        }
-                    },
-                    "line_linked": {
-                        "enable": true,
-                        "distance": 150,
-                        "color": "#ffffff",
-                        "opacity": 0.2,
-                        "width": 1
-                    },
-                    "move": {
-                        "enable": true,
-                        "speed": 1,
-                        "direction": "none",
-                        "random": true,
-                        "straight": false,
-                        "out_mode": "out",
-                        "bounce": false,
-                        "attract": {
-                            "enable": true,
-                            "rotateX": 600,
-                            "rotateY": 1200
-                        }
-                    }
+      // Particles.js para el fondo dinámico
+      document.addEventListener('DOMContentLoaded', function () {
+        // Configuración de particles.js
+        particlesJS('particles-js', {
+          particles: {
+            number: {
+              value: 80,
+              density: {
+                enable: true,
+                value_area: 800,
+              },
+            },
+            color: {
+              value: '#ffffff',
+            },
+            shape: {
+              type: 'circle',
+              stroke: {
+                width: 0,
+                color: '#000000',
+              },
+            },
+            opacity: {
+              value: 0.3,
+              random: true,
+              anim: {
+                enable: true,
+                speed: 1,
+                opacity_min: 0.1,
+                sync: false,
+              },
+            },
+            size: {
+              value: 3,
+              random: true,
+              anim: {
+                enable: true,
+                speed: 2,
+                size_min: 0.1,
+                sync: false,
+              },
+            },
+            line_linked: {
+              enable: true,
+              distance: 150,
+              color: '#ffffff',
+              opacity: 0.2,
+              width: 1,
+            },
+            move: {
+              enable: true,
+              speed: 1,
+              direction: 'none',
+              random: true,
+              straight: false,
+              out_mode: 'out',
+              bounce: false,
+              attract: {
+                enable: true,
+                rotateX: 600,
+                rotateY: 1200,
+              },
+            },
+          },
+          interactivity: {
+            detect_on: 'canvas',
+            events: {
+              onhover: {
+                enable: true,
+                mode: 'grab',
+              },
+              onclick: {
+                enable: true,
+                mode: 'push',
+              },
+              resize: true,
+            },
+            modes: {
+              grab: {
+                distance: 140,
+                line_linked: {
+                  opacity: 0.5,
                 },
-                "interactivity": {
-                    "detect_on": "canvas",
-                    "events": {
-                        "onhover": {
-                            "enable": true,
-                            "mode": "grab"
-                        },
-                        "onclick": {
-                            "enable": true,
-                            "mode": "push"
-                        },
-                        "resize": true
-                    },
-                    "modes": {
-                        "grab": {
-                            "distance": 140,
-                            "line_linked": {
-                                "opacity": 0.5
-                            }
-                        },
-                        "push": {
-                            "particles_nb": 4
-                        }
-                    }
-                },
-                "retina_detect": true
-            });
-
-            // Efecto magnético en botones
-            const buttons = document.querySelectorAll('.btn-magnetic');
-            
-            buttons.forEach(button => {
-                button.addEventListener('mousemove', (e) => {
-                    const rect = button.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    
-                    const deltaX = (x - centerX) / 10;
-                    const deltaY = (y - centerY) / 10;
-                    
-                    button.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
-                    
-                    const btnContent = button.querySelector('.btn-content');
-                    btnContent.style.transform = `translate(${-deltaX * 0.5}px, ${-deltaY * 0.5}px)`;
-                });
-                
-                button.addEventListener('mouseleave', () => {
-                    button.style.transform = 'translate(0, 0)';
-                    const btnContent = button.querySelector('.btn-content');
-                    btnContent.style.transform = 'translate(0, 0)';
-                });
-            });
+              },
+              push: {
+                particles_nb: 4,
+              },
+            },
+          },
+          retina_detect: true,
         });
+
+        // Efecto magnético en botones
+        const buttons = document.querySelectorAll('.btn-magnetic');
+
+        buttons.forEach((button) => {
+          button.addEventListener('mousemove', (e) => {
+            const rect = button.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const deltaX = (x - centerX) / 10;
+            const deltaY = (y - centerY) / 10;
+
+            button.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+
+            const btnContent = button.querySelector('.btn-content');
+            btnContent.style.transform = `translate(${-deltaX * 0.5}px, ${
+              -deltaY * 0.5
+            }px)`;
+          });
+
+          button.addEventListener('mouseleave', () => {
+            button.style.transform = 'translate(0, 0)';
+            const btnContent = button.querySelector('.btn-content');
+            btnContent.style.transform = 'translate(0, 0)';
+          });
+        });
+      });
     </script>
 
     <!-- Bootstrap 5 JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>
