@@ -1,685 +1,855 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CloudSync | Portafolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <style>
-        :root {
-            --primary: #211C84;
-            --dark: #2c3e50;
-            --light: #ecf0f1;
-        }
-        
-        body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background-color: #f8f9fa;
-            color: var(--dark);
-            overflow-x: hidden;
-        }
-        
-        .hero {
-            background: linear-gradient(135deg, var(--primary) -25%, #30309D 100%);
-            color: white;
-            padding: 80px 0 120px;
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-        }
-        
-        .app-screenshot {
-            border-radius: 12px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.2);
-            background: white;
-            padding: 5px;
-        }
-        
-        .app-screenshot:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
-        
-        .tech-badge {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 50px;
-            padding: 8px 20px;
-            margin: 5px;
-            display: inline-block;
-            font-size: 0.9rem;
-        }
-        
-        .text-gradient {
-            background: linear-gradient(90deg, #FFAB5B 0%, #FF7B5B 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: inline;
-        }
-        .section-title {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 40px;
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 50%;
-            height: 3px;
-            background: var(--primary);
-        }
-        
-        .feature-card {
+      :root {
+        --primary: #211c84;
+        --dark: #2c3e50;
+        --light: #ecf0f1;
+      }
+
+      body {
+        font-family: 'Segoe UI', system-ui, sans-serif;
+        background-color: #f8f9fa;
+        color: var(--dark);
+        overflow-x: hidden;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, var(--primary) -25%, #30309d 100%);
+        color: white;
+        padding: 80px 0 120px;
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+      }
+
+      .app-screenshot {
+        border-radius: 12px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: white;
+        padding: 5px;
+      }
+
+      .app-screenshot:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .tech-badge {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50px;
+        padding: 8px 20px;
+        margin: 5px;
+        display: inline-block;
+        font-size: 0.9rem;
+      }
+
+      .text-gradient {
+        background: linear-gradient(90deg, #ffab5b 0%, #ff7b5b 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: inline;
+      }
+      .section-title {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 40px;
+      }
+
+      .section-title:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 50%;
+        height: 3px;
+        background: var(--primary);
+      }
+
+      .feature-card {
         background: white;
         border-radius: 12px;
         padding: 30px;
         height: 100%;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         transition: transform 0.3s, box-shadow 0.3s;
-        border: 1px solid rgba(0,0,0,0.03);
-        }
-        
-        .feature-card:hover {
+        border: 1px solid rgba(0, 0, 0, 0.03);
+      }
+
+      .feature-card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-            .feature-icon {
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+      .feature-icon {
         width: 70px;
         height: 70px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-    
-    .bg-primary-soft {
+      }
+
+      .bg-primary-soft {
         background-color: rgba(13, 110, 253, 0.1);
-    }
-    
-    .feature-list {
+      }
+
+      .feature-list {
         list-style: none;
         padding-left: 0;
         margin-top: 20px;
-    }
-    
-    .feature-list li {
+      }
+
+      .feature-list li {
         margin-bottom: 8px;
-    }
-        
-        .gallery-item {
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .modal-dialog {
-            max-width: 800px;
-        }
-        .modalDialog {
-            max-width: 350px;
-        }
-        .modern-btn {
-            width: 100%;
-            height: 120px;
-            background: linear-gradient(135deg, #3498db, #2c3e50);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-        }
-    
-    .modern-btn:hover {
+      }
+
+      .gallery-item {
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .modal-dialog {
+        max-width: 800px;
+      }
+      .modalDialog {
+        max-width: 350px;
+      }
+      .modern-btn {
+        width: 100%;
+        height: 120px;
+        background: linear-gradient(135deg, #3498db, #2c3e50);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+      }
+
+      .modern-btn:hover {
         transform: translateY(-5px);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         background: linear-gradient(135deg, #2980b9, #1a242f);
-    }
-    
-    .modern-btn i {
+      }
+
+      .modern-btn i {
         font-size: 2rem;
-    }
-    
-    .modern-btn span {
+      }
+
+      .modern-btn span {
         font-size: 1.1rem;
         font-weight: 500;
-    }
-        footer {
-            background-color: var(--primary);
-            color: white;
-            padding: 30px 0;
-        }    
+      }
+      footer {
+        background-color: var(--primary);
+        color: white;
+        padding: 30px 0;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-4 text-gradient">CloudSync</h1>
-                    <p class="lead mb-4">Aplicación web dinámica con stack moderno que se sincroniza en tiempo real con la base de datos del sistema administrativo D3xD.</p>
-                    <div class="mb-4">
-                        <span class="tech-badge"><i class="fab fa-angular me-2"></i>Angular</span>
-                        <span class="tech-badge"><i class="fab fa-node-js me-2"></i>Node.js</span>
-                        <span class="tech-badge"><i class="fas fa-database me-2"></i>MySQL</span>
-                        <span class="tech-badge"><i class="fab fa-linux me-2"></i>Linux Server</span>
-                    </div>
-                    
-                    <a href="javascript:void(0)" class="btn btn-light btn-lg me-2">
-                        <i class="fas fa-play-circle me-2"></i> Ver Demo
-                    </a>
-                    <a href="#tech" class="btn btn-outline-light btn-lg">
-                        <i class="fas fa-code me-2"></i> Tecnologías
-                    </a>
-                </div>
-                <div class="col-lg-6">
-                    <img src="https://i.ibb.co/R4Nw2cfd/2025-04-02-08h40-44.png" alt="Dashboard CloudSync" class="img-fluid app-screenshot">
-                </div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h1 class="display-4 fw-bold mb-4 text-gradient">CloudSync</h1>
+            <p class="lead mb-4">
+              Aplicación web dinámica con stack moderno que se sincroniza en
+              tiempo real con la base de datos del sistema administrativo D3xD.
+            </p>
+            <div class="mb-4">
+              <span class="tech-badge"
+                ><i class="fab fa-angular me-2"></i>Angular</span
+              >
+              <span class="tech-badge"
+                ><i class="fab fa-node-js me-2"></i>Node.js</span
+              >
+              <span class="tech-badge"
+                ><i class="fas fa-database me-2"></i>MySQL</span
+              >
+              <span class="tech-badge"
+                ><i class="fab fa-linux me-2"></i>Linux Server</span
+              >
             </div>
+
+            <a href="javascript:void(0)" class="btn btn-light btn-lg me-2">
+              <i class="fas fa-play-circle me-2"></i> Ver Demo
+            </a>
+            <a href="#tech" class="btn btn-outline-light btn-lg">
+              <i class="fas fa-code me-2"></i> Tecnologías
+            </a>
+            <a
+              href="https://salinaspaul1974.github.io/portafolio/"
+              class="btn btn-outline-light btn-lg"
+            >
+              <i class="fas fa-code me-2"></i> Retornar
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="https://i.ibb.co/R4Nw2cfd/2025-04-02-08h40-44.png"
+              alt="Dashboard CloudSync"
+              class="img-fluid app-screenshot"
+            />
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- App Screenshots -->
     <section id="demo" class="">
-        <div class="container py-5">
-            <h2 class="section-title">Interfaz CloudSync</h2>
-            <div class="row g-4">
-                <div class="col-md-4 gallery-item">
-                    <button class="modern-btn" data-bs-toggle="modal" data-bs-target="#imageModalMovil" data-img="https://via.placeholder.com/800x1200/2c3e50/ecf0f1?text=Mobile+View+Expanded">
-                        <i class="bi bi-phone"></i>
-                        <span>Vista móvil</span>
-                    </button>
-                </div>
-                <div class="col-md-4 gallery-item">
-                    <button class="modern-btn" data-bs-toggle="modal" data-bs-target="#imageModalDesktop" data-img="https://via.placeholder.com/1200x800/2c3e50/ecf0f1?text=File+Manager+Expanded">
-                        <i class="bi bi-file-earmark-post"></i>
-                        <span>Gestor de pedidos</span>
-                    </button>
-                </div>
-                <div class="col-md-4 gallery-item">
-                    <button class="modern-btn" data-bs-toggle="modal" data-bs-target="#imageModalConf" data-img="https://via.placeholder.com/1200x800/2c3e50/ecf0f1?text=Settings+Panel+Expanded">
-                        <i class="bi bi-gear"></i>
-                        <span>Panel de configuración</span>
-                    </button>
-                </div>
-            </div>
-            
+      <div class="container py-5">
+        <h2 class="section-title">Interfaz CloudSync</h2>
+        <div class="row g-4">
+          <div class="col-md-4 gallery-item">
+            <button
+              class="modern-btn"
+              data-bs-toggle="modal"
+              data-bs-target="#imageModalMovil"
+              data-img="https://via.placeholder.com/800x1200/2c3e50/ecf0f1?text=Mobile+View+Expanded"
+            >
+              <i class="bi bi-phone"></i>
+              <span>Vista móvil</span>
+            </button>
+          </div>
+          <div class="col-md-4 gallery-item">
+            <button
+              class="modern-btn"
+              data-bs-toggle="modal"
+              data-bs-target="#imageModalDesktop"
+              data-img="https://via.placeholder.com/1200x800/2c3e50/ecf0f1?text=File+Manager+Expanded"
+            >
+              <i class="bi bi-file-earmark-post"></i>
+              <span>Gestor de pedidos</span>
+            </button>
+          </div>
+          <div class="col-md-4 gallery-item">
+            <button
+              class="modern-btn"
+              data-bs-toggle="modal"
+              data-bs-target="#imageModalConf"
+              data-img="https://via.placeholder.com/1200x800/2c3e50/ecf0f1?text=Settings+Panel+Expanded"
+            >
+              <i class="bi bi-gear"></i>
+              <span>Panel de configuración</span>
+            </button>
+          </div>
         </div>
+      </div>
     </section>
-
-    <!-- Key Features -->
-<!--     <section class="py-5 bg-light">
-        <div class="container py-5">
-            <h2 class="section-title">Funcionalidades Clave</h2>
-            
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <div class="mb-3 text-primary" style="font-size: 2rem;">
-                            <i class="fas fa-sync-alt"></i>
-                        </div>
-                        <h4><strong>Sincronización en tiempo real</strong></h4>
-                        <p>Aplicación web dinámica que se sincroniza con la base de datos del sistema administrativo D3xD, automatizando el flujo completo de pedidos en tiempo real.</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <div class="mb-3 text-primary" style="font-size: 2rem;">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Cifrado Extremo a Extremo</h3>
-                        <p>Protección AES-256 para tus archivos tanto en tránsito como en reposo en el servidor.</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <div class="mb-3 text-primary" style="font-size: 2rem;">
-                            <i class="fas fa-history"></i>
-                        </div>
-                        <h3>Historial de Versiones</h3>
-                        <p>Recupera cualquier versión anterior de tus archivos hasta por 180 días con sistema de snapshots eficiente.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <section class="bg-light">
-        <div class="container py-3">
-            <h2 class="text-center mb-5">Funcionalidades Clave</h2>
-            
-            <div class="row g-4">
-                <!-- Feature 1 -->
-                <div class="col-md-4">
-                    <div class="feature-card animate__animated animate__fadeInUp">
-                        <div class="feature-icon bg-primary-soft mb-4">
-                            <i class="bi bi-arrow-left-right fs-2 text-primary"></i>
-                        </div>
-                        <h3>Integración Automatizada</h3>
-                        <p class="text-muted">Conexión bidireccional en tiempo real con D3xD, sincronizando inventarios y registrando pedidos directamente en el ERP.</p>
-                        <ul class="feature-list">
-                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Sincronización de BD</li>
-                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Mapeo de campos personalizado</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Feature 2 -->
-                <div class="col-md-4">
-                    <div class="feature-card animate__animated animate__fadeInUp animate__delay-1s">
-                        <div class="feature-icon bg-primary-soft mb-4">
-                            <i class="bi bi-file-earmark-pdf fs-2 text-danger"></i>
-                        </div>
-                        <h3>Documentos Inteligentes</h3>
-                        <p class="text-muted">Generación automática de PDFs profesionales con detalles de pedido y distribución por email.</p>
-                        <ul class="feature-list">
-                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Plantillas personalizables</li>
-                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Envío multi-destinatario</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Feature 3 -->
-                <div class="col-md-4">
-                    <div class="feature-card animate__animated animate__fadeInUp animate__delay-2s">
-                        <div class="feature-icon bg-primary-soft mb-4">
-                            <i class="bi bi-lightning-charge fs-2 text-warning"></i>
-                        </div>
-                        <h3>Optimización Comercial</h3>
-                        <p class="text-muted">Reduce tiempos de procesamiento en 40% con validación de stock en línea y flujo automatizado.</p>
-                        <ul class="feature-list">
-                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Interfaz intuitiva</li>
-                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Automatización integral</li>
-                        </ul>
-                    </div>
-                </div>
+      <div class="container py-3">
+        <h2 class="text-center mb-5">Funcionalidades Clave</h2>
+
+        <div class="row g-4">
+          <!-- Feature 1 -->
+          <div class="col-md-4">
+            <div class="feature-card animate__animated animate__fadeInUp">
+              <div class="feature-icon bg-primary-soft mb-4">
+                <i class="bi bi-arrow-left-right fs-2 text-primary"></i>
+              </div>
+              <h3>Integración Automatizada</h3>
+              <p class="text-muted">
+                Conexión bidireccional en tiempo real con D3xD, sincronizando
+                inventarios y registrando pedidos directamente en el ERP.
+              </p>
+              <ul class="feature-list">
+                <li>
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  Sincronización de BD
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  Mapeo de campos personalizado
+                </li>
+              </ul>
             </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="col-md-4">
+            <div
+              class="feature-card animate__animated animate__fadeInUp animate__delay-1s"
+            >
+              <div class="feature-icon bg-primary-soft mb-4">
+                <i class="bi bi-file-earmark-pdf fs-2 text-danger"></i>
+              </div>
+              <h3>Documentos Inteligentes</h3>
+              <p class="text-muted">
+                Generación automática de PDFs profesionales con detalles de
+                pedido y distribución por email.
+              </p>
+              <ul class="feature-list">
+                <li>
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  Plantillas personalizables
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  Envío multi-destinatario
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="col-md-4">
+            <div
+              class="feature-card animate__animated animate__fadeInUp animate__delay-2s"
+            >
+              <div class="feature-icon bg-primary-soft mb-4">
+                <i class="bi bi-lightning-charge fs-2 text-warning"></i>
+              </div>
+              <h3>Optimización Comercial</h3>
+              <p class="text-muted">
+                Reduce tiempos de procesamiento en 40% con validación de stock
+                en línea y flujo automatizado.
+              </p>
+              <ul class="feature-list">
+                <li>
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  Interfaz intuitiva
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  Automatización integral
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
-
-
 
     <!-- Tech Stack -->
     <section id="tech" class="">
-        <div class="container py-5">
-            <h2 class="section-title">Stack Tecnológico</h2>
-            
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="mb-4">
-                        <h4 class="mb-3">Frontend</h4>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Angular (Single Page Application)</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Bootstrap 5 + CSS3 personalizado</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> jQuery para compatibilidad</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> TypeScript para tipado seguro</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-md-6">
-                    <div class="mb-4">
-                        <h4 class="mb-3">Backend & Infraestructura</h4>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Node.js con Express</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> MySQL para almacenamiento relacional</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Linux Server (cPanel/WHM)</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> API RESTful con JWT Auth</li>
-                        </ul>
-                    </div>
-                </div>
+      <div class="container py-5">
+        <h2 class="section-title">Stack Tecnológico</h2>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-4">
+              <h4 class="mb-3">Frontend</h4>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i> Angular
+                  (Single Page Application)
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i>
+                  Bootstrap 5 + CSS3 personalizado
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i> jQuery
+                  para compatibilidad
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i>
+                  TypeScript para tipado seguro
+                </li>
+              </ul>
             </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="mb-4">
+              <h4 class="mb-3">Backend & Infraestructura</h4>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i> Node.js
+                  con Express
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i> MySQL
+                  para almacenamiento relacional
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i> Linux
+                  Server (cPanel/WHM)
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check-circle text-primary me-2"></i> API
+                  RESTful con JWT Auth
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <section class="py-5 bg-primary text-center">
-        <div class="container py-4">
-            <h3 class="text-white mb-4">¿Listo para trabajar juntos?</h3>
-            <a href="https://wa.me/584148087184" 
-               target="_blank"
-               class="btn btn-light btn-lg rounded-pill px-4">
-               <i class="fab fa-whatsapp text-success me-2"></i> Conversemos por WhatsApp
-            </a>
-            <p class="text-white-50 mt-3 mb-0">O escríbeme a: <a href="mailto:tu@email.com" class="text-white">salinaspaul1974@gmail.com</a></p>
-        </div>
-    </section>    
+      <div class="container py-4">
+        <h3 class="text-white mb-4">¿Listo para trabajar juntos?</h3>
+        <a
+          href="https://wa.me/584148087184"
+          target="_blank"
+          class="btn btn-light btn-lg rounded-pill px-4"
+        >
+          <i class="fab fa-whatsapp text-success me-2"></i> Conversemos por
+          WhatsApp
+        </a>
+        <p class="text-white-50 mt-3 mb-0">
+          O escríbeme a:
+          <a href="mailto:tu@email.com" class="text-white"
+            >salinaspaul1974@gmail.com</a
+          >
+        </p>
+      </div>
+    </section>
 
-        <!-- Footer -->
+    <!-- Footer -->
     <footer class="text-center">
-        <div class="container">
-<!--             <div class="mb-4">
+      <div class="container">
+        <!--             <div class="mb-4">
                 <a href="#" class="text-white mx-3"><i class="fab fa-github fa-2x"></i></a>
                 <a href="#" class="text-white mx-3"><i class="fab fa-linkedin fa-2x"></i></a>
                 <a href="#" class="text-white mx-3"><i class="fab fa-twitter fa-2x"></i></a>
                 <a href="#" class="text-white mx-3"><i class="fab fa-instagram fa-2x"></i></a>
             </div> -->
-            <p class="mb-0">© 2025 DevByPaulSalinas. Todos los derechos reservados.</p>
-        </div>
+        <p class="mb-0">
+          © 2025 DevByPaulSalinas. Todos los derechos reservados.
+        </p>
+      </div>
     </footer>
 
     <!-- Image Modal Movil -->
-  <div
-    class="modal fade"
-    id="imageModalMovil"
-    tabindex="-1"
-    role="dialog"
-    aria-labelledby="modalTitleId"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog modalDialog" role="document">
-      <div class="modal-content">
-        <div class="modal-body">
-          <div class="mdlHeader w-100 d-flex justify-content-end mb-3">
+    <div
+      class="modal fade"
+      id="imageModalMovil"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modalTitleId"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modalDialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="mdlHeader w-100 d-flex justify-content-end mb-3">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="container-fluid">
+              <div
+                id="imageCarouselM"
+                class="carousel slide"
+                data-bs-ride="carousel"
+              >
+                <div class="carousel-inner">
+                  <!-- Primer elemento (activo) -->
+                  <div class="carousel-item active">
+                    <img
+                      src="https://i.ibb.co/v4NzmHq2/10.png"
+                      class="d-block w-100"
+                      alt="Inicio de sesión"
+                    />
+                    <div class="d-flex justify-content-center w-100">
+                      <p class="text-dark">Inicio de sesión</p>
+                    </div>
+                  </div>
+
+                  <!-- Resto de elementos -->
+                  <div class="carousel-item">
+                    <img
+                      src="https://i.ibb.co/TxgDTHVB/9.png"
+                      class="d-block w-100"
+                      alt="Imagen 2"
+                    />
+                    <div class="d-flex justify-content-center w-100">
+                      <p class="text-dark">Selección de productos</p>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <img
+                      src="https://i.ibb.co/qYFMrZTv/8.png"
+                      class="d-block w-100"
+                      alt="Imagen 3"
+                    />
+                    <div class="d-flex justify-content-center w-100">
+                      <p class="text-dark">Finalización del proceso</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Controles -->
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#imageCarouselM"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Anterior</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#imageCarouselM"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Siguiente</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
             <button
               type="button"
-              class="btn-close"
+              class="btn btn-outline-success ps-5 pe-5"
               data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>            
-          <div class="container-fluid">
-            <div id="imageCarouselM" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <!-- Primer elemento (activo) -->
-                <div class="carousel-item active">
-                  <img src="https://i.ibb.co/v4NzmHq2/10.png" class="d-block w-100" alt="Inicio de sesión">
-                  <div class="d-flex justify-content-center w-100">
-                    <p class="text-dark">Inicio de sesión</p>
-                  </div>
-                </div>
-                
-                <!-- Resto de elementos -->
-                <div class="carousel-item">
-                  <img src="https://i.ibb.co/TxgDTHVB/9.png" class="d-block w-100" alt="Imagen 2">
-                  <div class="d-flex justify-content-center w-100">
-                      <p class="text-dark">Selección de productos</p>
-                  </div>
-                </div>
-                
-                <div class="carousel-item">
-                  <img src="https://i.ibb.co/qYFMrZTv/8.png" class="d-block w-100" alt="Imagen 3">
-                  <div class="d-flex justify-content-center w-100">
-                      <p class="text-dark">Finalización del proceso</p>
-                  </div>
-                </div>
-               
-              </div>
-              
-              <!-- Controles -->
-              <button class="carousel-control-prev" type="button" data-bs-target="#imageCarouselM" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#imageCarouselM" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-              </button>
-            </div>
-              
+            >
+              Cerrar
+            </button>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-outline-success ps-5 pe-5"
-            data-bs-dismiss="modal"
-          >
-            Cerrar
-          </button>
         </div>
       </div>
     </div>
-  </div>
 
     <!-- Image Modal Desktop -->
-  <div
-    class="modal fade"
-    id="imageModalDesktop"
-    tabindex="-1"
-    role="dialog"
-    aria-labelledby="modalTitleId"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-body">
-          <div class="mdlHeader w-100 d-flex justify-content-end mb-3">
+    <div
+      class="modal fade"
+      id="imageModalDesktop"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modalTitleId"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="mdlHeader w-100 d-flex justify-content-end mb-3">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="container-fluid">
+              <div
+                id="imageCarouselD"
+                class="carousel slide"
+                data-bs-ride="carousel"
+              >
+                <div class="carousel-inner">
+                  <!-- Primer elemento (activo) -->
+                  <div class="carousel-item active">
+                    <img
+                      src="https://i.ibb.co/hbtGBNt/1.png"
+                      class="d-block w-100"
+                      alt="Inicio de sesión"
+                    />
+                    <div class="d-flex justify-content-center w-100">
+                      <p class="text-dark">Inicio de sesión</p>
+                    </div>
+                  </div>
+
+                  <!-- Resto de elementos -->
+                  <div class="carousel-item">
+                    <img
+                      src="https://i.ibb.co/C5XM8FpT/2.png"
+                      class="d-block w-100"
+                      alt="Imagen 2"
+                    />
+                    <div class="d-flex justify-content-center w-100">
+                      <p class="text-dark">Selección de productos</p>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <img
+                      src="https://i.ibb.co/v635xcVZ/4.png"
+                      class="d-block w-100"
+                      alt="Imagen 3"
+                    />
+                    <div class="d-flex justify-content-center w-100">
+                      <p class="text-dark">Zoom a la imagen del producto</p>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <img
+                      src="https://i.ibb.co/9HjBfwmz/5.png"
+                      class="d-block w-100"
+                      alt="Imagen 4"
+                    />
+                    <div class="d-flex justify-content-center w-100">
+                      <p class="text-dark">Carrito de compras</p>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <img
+                      src="https://i.ibb.co/67JCVrmb/3.png"
+                      class="d-block w-100"
+                      alt="Imagen 5"
+                    />
+                    <div class="d-flex justify-content-center w-100">
+                      <p class="text-dark">Cambio de contraseña</p>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <img
+                      src="https://i.ibb.co/yF37YJ5r/6.png"
+                      class="d-block w-100"
+                      alt="Imagen 6"
+                    />
+                    <div class="d-flex justify-content-center w-100">
+                      <p class="text-dark">Finalización del proceso</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Controles -->
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#imageCarouselD"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Anterior</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#imageCarouselD"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Siguiente</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
             <button
               type="button"
-              class="btn-close"
+              class="btn btn-sm btn-outline-success ps-5 pe-5"
               data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+            >
+              Cerrar
+            </button>
           </div>
-          <div class="container-fluid">
+        </div>
+      </div>
+    </div>
 
-            <div id="imageCarouselD" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <!-- Primer elemento (activo) -->
-                <div class="carousel-item active">
-                  <img src="https://i.ibb.co/hbtGBNt/1.png" class="d-block w-100" alt="Inicio de sesión">
-                  <div class="d-flex justify-content-center w-100">
-                    <p class="text-dark">Inicio de sesión</p>
-                  </div>
-                </div>
-                
-                <!-- Resto de elementos -->
-                <div class="carousel-item">
-                  <img src="https://i.ibb.co/C5XM8FpT/2.png" class="d-block w-100" alt="Imagen 2">
-                  <div class="d-flex justify-content-center w-100">
-                      <p class="text-dark">Selección de productos</p>
-                  </div>
-                </div>
-                
-                <div class="carousel-item">
-                  <img src="https://i.ibb.co/v635xcVZ/4.png" class="d-block w-100" alt="Imagen 3">
-                  <div class="d-flex justify-content-center w-100">
-                      <p class="text-dark">Zoom a la imagen del producto</p>
-                  </div>
-                </div>
-                
-                <div class="carousel-item">
-                  <img src="https://i.ibb.co/9HjBfwmz/5.png" class="d-block w-100" alt="Imagen 4">
-                  <div class="d-flex justify-content-center w-100">
-                      <p class="text-dark">Carrito de compras</p>
-                  </div>
-                </div>
-                
-                <div class="carousel-item">
-                  <img src="https://i.ibb.co/67JCVrmb/3.png" class="d-block w-100" alt="Imagen 5">
-                  <div class="d-flex justify-content-center w-100">
-                      <p class="text-dark">Cambio de contraseña</p>
-                  </div>
-                </div>
-                
-                <div class="carousel-item">
-                  <img src="https://i.ibb.co/yF37YJ5r/6.png" class="d-block w-100" alt="Imagen 6">
-                  <div class="d-flex justify-content-center w-100">
-                      <p class="text-dark">Finalización del proceso</p>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Controles -->
-              <button class="carousel-control-prev" type="button" data-bs-target="#imageCarouselD" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#imageCarouselD" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-              </button>
+    <!-- Image Modal -->
+    <div
+      class="modal fade"
+      id="imageModalConf"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modalTitleId"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="mdlHeader w-100 d-flex justify-content-end mb-3">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
             </div>
 
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-sm btn-outline-success ps-5 pe-5"
-            data-bs-dismiss="modal"
-          >
-            Cerrar
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
+            <div class="container-fluid">
+              <div
+                id="imageCarouselC"
+                class="carousel slide"
+                data-bs-ride="carousel"
+              >
+                <div class="carousel-inner">
+                  <!-- Primer elemento (activo) -->
+                  <div class="carousel-item active">
+                    <img
+                      src="https://i.ibb.co/ksrGdmyz/13.png"
+                      class="d-block w-100"
+                      alt="Inicio de sesión"
+                    />
+                    <div class="d-flex justify-content-center w-100">
+                      <p class="text-dark">Carga de imágenes productos</p>
+                    </div>
+                  </div>
 
-     <!-- Image Modal -->
-  <div
-    class="modal fade"
-    id="imageModalConf"
-    tabindex="-1"
-    role="dialog"
-    aria-labelledby="modalTitleId"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-body">
-          <div class="mdlHeader w-100 d-flex justify-content-end mb-3">
+                  <!-- Resto de elementos -->
+                  <div class="carousel-item">
+                    <img
+                      src="https://i.ibb.co/C5g0LXQF/12.png"
+                      class="d-block w-100"
+                      alt="Imagen 2"
+                    />
+                    <div class="d-flex justify-content-center w-100">
+                      <p class="text-dark">Subcategorias</p>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <img
+                      src="https://i.ibb.co/FqYjfwHS/11.png"
+                      class="d-block w-100"
+                      alt="Imagen 3"
+                    />
+                    <div class="d-flex justify-content-center w-100">
+                      <p class="text-dark">Carga de imágenes publicidad</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Controles -->
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#imageCarouselC"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Anterior</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#imageCarouselC"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Siguiente</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
             <button
               type="button"
-              class="btn-close"
+              class="btn btn-secondary"
               data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>            
-
-          <div class="container-fluid">
-            <div id="imageCarouselC" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <!-- Primer elemento (activo) -->
-                <div class="carousel-item active">
-                  <img src="https://i.ibb.co/ksrGdmyz/13.png" class="d-block w-100" alt="Inicio de sesión">
-                  <div class="d-flex justify-content-center w-100">
-                    <p class="text-dark">Carga de imágenes productos</p>
-                  </div>
-                </div>
-                
-                <!-- Resto de elementos -->
-                <div class="carousel-item">
-                  <img src="https://i.ibb.co/C5g0LXQF/12.png" class="d-block w-100" alt="Imagen 2">
-                  <div class="d-flex justify-content-center w-100">
-                      <p class="text-dark">Subcategorias</p>
-                  </div>
-                </div>
-                
-                <div class="carousel-item">
-                  <img src="https://i.ibb.co/FqYjfwHS/11.png" class="d-block w-100" alt="Imagen 3">
-                  <div class="d-flex justify-content-center w-100">
-                      <p class="text-dark">Carga de imágenes publicidad</p>
-                  </div>
-                </div>
-               
-              </div>
-              
-              <!-- Controles -->
-              <button class="carousel-control-prev" type="button" data-bs-target="#imageCarouselC" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#imageCarouselC" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-              </button>
-            </div>              
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save</button>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-dismiss="modal"
-          >
-            Close
-          </button>
-          <button type="button" class="btn btn-primary">Save</button>
         </div>
       </div>
     </div>
-  </div>
 
     <script>
-        // Modal Gallery
-        document.addEventListener('DOMContentLoaded', function() {
-            var imageModalMovil = document.getElementById('imageModalMovil');
-            imageModalMovil.addEventListener('show.bs.modal', function(event) {
-                var button = event.relatedTarget;
-                var imageUrl = button.getAttribute('data-img');
-                var modalImage = document.getElementById('modalImage');
-                modalImage.src = imageUrl;
-            });
-            
-            // Smooth scroll for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
+      // Modal Gallery
+      document.addEventListener('DOMContentLoaded', function () {
+        var imageModalMovil = document.getElementById('imageModalMovil');
+        imageModalMovil.addEventListener('show.bs.modal', function (event) {
+          var button = event.relatedTarget;
+          var imageUrl = button.getAttribute('data-img');
+          var modalImage = document.getElementById('modalImage');
+          modalImage.src = imageUrl;
         });
 
-        document.addEventListener('DOMContentLoaded', function() {
-            var imageModalDesktop = document.getElementById('imageModalDesktop');
-            imageModalDesktop.addEventListener('show.bs.modal', function(event) {
-                var button = event.relatedTarget;
-                var imageUrl = button.getAttribute('data-img');
-                var modalImage = document.getElementById('modalImage');
-                modalImage.src = imageUrl;
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth',
             });
-            
-            // Smooth scroll for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
+          });
+        });
+      });
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var imageModalDesktop = document.getElementById('imageModalDesktop');
+        imageModalDesktop.addEventListener('show.bs.modal', function (event) {
+          var button = event.relatedTarget;
+          var imageUrl = button.getAttribute('data-img');
+          var modalImage = document.getElementById('modalImage');
+          modalImage.src = imageUrl;
         });
 
-        // Modal Gallery
-        document.addEventListener('DOMContentLoaded', function() {
-            var imageModalConf = document.getElementById('imageModalConf');
-            imageModalConf.addEventListener('show.bs.modal', function(event) {
-                var button = event.relatedTarget;
-                var imageUrl = button.getAttribute('data-img');
-                var imageModalConf = document.getElementById('imageModalConf');
-                imageModalConf.src = imageUrl;
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth',
             });
-            
-            // // Smooth scroll for anchor links
-            // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            //     anchor.addEventListener('click', function(e) {
-            //         e.preventDefault();
-            //         document.querySelector(this.getAttribute('href')).scrollIntoView({
-            //             behavior: 'smooth'
-            //         });
-            //     });
-            // });
+          });
         });
+      });
+
+      // Modal Gallery
+      document.addEventListener('DOMContentLoaded', function () {
+        var imageModalConf = document.getElementById('imageModalConf');
+        imageModalConf.addEventListener('show.bs.modal', function (event) {
+          var button = event.relatedTarget;
+          var imageUrl = button.getAttribute('data-img');
+          var imageModalConf = document.getElementById('imageModalConf');
+          imageModalConf.src = imageUrl;
+        });
+
+        // // Smooth scroll for anchor links
+        // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        //     anchor.addEventListener('click', function(e) {
+        //         e.preventDefault();
+        //         document.querySelector(this.getAttribute('href')).scrollIntoView({
+        //             behavior: 'smooth'
+        //         });
+        //     });
+        // });
+      });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
+  </body>
 </html>
